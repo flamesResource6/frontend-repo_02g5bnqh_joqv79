@@ -1,28 +1,39 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Story from './components/Story';
+import Packages from './components/Packages';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-stone-900">
+      <nav className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-stone-200">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+          <a href="#" className="text-xl font-extrabold tracking-tight">
+            Legieta <span className="text-amber-700">Wajit</span>
+          </a>
+          <div className="hidden sm:flex items-center gap-6 text-sm font-medium">
+            <a href="#packages" className="hover:text-amber-700">Paket</a>
+            <a href="#contact" className="hover:text-amber-700">Kontak</a>
+          </div>
+          <a href="#contact" className="rounded-lg bg-amber-600 px-4 py-2 text-white shadow hover:bg-amber-700 text-sm">Kolaborasi</a>
         </div>
-      </div>
+      </nav>
+
+      <main>
+        <Hero />
+        <Story />
+        <Packages />
+        <Contact />
+      </main>
+
+      <footer className="border-t border-stone-200">
+        <div className="mx-auto max-w-7xl px-6 py-8 text-sm text-stone-600 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p>© {new Date().getFullYear()} Legieta. Semua hak dilindungi.</p>
+          <p>Manisnya tradisi untuk momen yang tak terlupakan.</p>
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
